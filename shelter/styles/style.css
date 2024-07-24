@@ -540,3 +540,160 @@ body {
     color: rgba(178, 178, 178, 1);
     margin-top: 20px;
 }
+
+
+/*----------------------------------------------------------------------------------*/
+
+
+.footer {
+    background-color: blueviolet;
+    margin: 0;
+    padding: 0;
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*align-items: flex-end;*/
+    /*flex-wrap: wrap;  */  
+}
+
+.container.container-footer {
+    padding-top: 40px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    align-items: flex-start;
+    margin: 16px 0 60px 0;
+}
+
+.contacts-title {
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 45.5px;
+    text-align: left;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.contacts-email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.contacts-email-image {
+    margin: 2px 20px 1px 0;
+}
+
+.contacts-email-adress {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: rgba(241, 205, 179, 1);
+}
+
+.contacts-phone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contacts-phone-image {
+    margin: -5px 20px -4px 0;
+}
+
+.contacts-phone-number {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: rgba(241, 205, 179, 1);
+}
+
+.coordinates {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    align-items: flex-start;
+    margin: 16px 160px 60px 160px;
+}
+
+.coordinates-title {
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.coordinates-address-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 34px;
+    margin-top: 32px;
+}
+
+.coordinates-address-one-image {
+    margin: -5px 20px -4px 0;
+}
+
+.coordinates-address-one-adress {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: rgba(241, 205, 179, 1);
+}
+
+.coordinates-address-two {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.coordinates-address-two-image {
+    margin: -5px 20px -4px 0;
+}
+.coordinates-address-two-adress {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: rgba(241, 205, 179, 1);
+}
+.footer-image {
+    /*position: absolute;
+    margin-bottom: 0;
+    margin-right: 0;*/
+}
+.footer-image-image {
+
+}
