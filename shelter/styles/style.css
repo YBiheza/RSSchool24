@@ -40,7 +40,6 @@ body {
 .logo {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .logo-link {
@@ -67,6 +66,7 @@ body {
     line-height: 14.95px;
     letter-spacing: 0.1em;
     text-align: left;
+    
 
 }
 
@@ -109,7 +109,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin-top: -180px;
+    margin-top: -183px;
 }
 
 .container-main {
@@ -131,7 +131,7 @@ body {
     width: 38.3%;
     margin: 0;
     margin-top: 343px;
-    margin-bottom: 243px;
+    margin-bottom: 246px;
     align-items: flex-start;
 }
 
@@ -335,6 +335,7 @@ body {
 }
 
 .pets-cards-image {
+    cursor: pointer;
 }
 
 .pets-cards-name {
@@ -660,7 +661,6 @@ body {
 .coordinates {
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
     align-items: flex-start;
     margin-top: 16px;
     margin-bottom: 60px;
@@ -681,14 +681,16 @@ body {
 .coordinates-address-one {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    margin: 0;
+    padding: 0;
     margin-bottom: 34px;
     margin-top: 32px;
 }
 
 .coordinates-address-one-image {
-    margin: -5px 20px -4px 0;
+    margin: 6px 20px 8px 0;
 }
 
 .coordinates-address-one-adress {
@@ -706,15 +708,16 @@ body {
 .coordinates-address-two {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 0;
     padding: 0;
 }
 
 .coordinates-address-two-image {
-    margin: -5px 20px -4px 0;
+    margin: 6px 20px 8px 0;
 }
+
 .coordinates-address-two-adress {
     font-family: Georgia;
     font-size: 20px;
