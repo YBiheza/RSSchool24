@@ -19,7 +19,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link nav-link-active">About the shelter</a>
+                        <p class="nav-link-active">About the shelter</p>
                     </li>
                     <li class="nav-item">
                         <a href="./pets.html" class="nav-link">Our pets</a>
@@ -64,23 +64,35 @@
         <section class="pets" id="pets">
             <div class="container pets-container">
                 <h3 class="pets-title">Our friends who <br>are looking for a house</h3>
-                <div class="pets-cards">
-                    <div class="pets-cards-personal pets-cards-Katrine">
-                        <img src="./pictures/pets/pets-katrine.svg" alt="Katrine's photo" class="pets-cards-image">    
-                        <h4 class="pets-cards-name">Katrine</h4>
-                        <button class="pets-cards-button">Learn more</button>
+                <wrapper class="pets-wrapper">
+                    <div class="left-arrow-block">
+                        <svg class="left-arrow" width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
+                        </svg>     
+                    </div>                   
+                    <div class="pets-cards">
+                        <div class="pets-cards-personal pets-cards-Katrine">
+                            <img src="./pictures/pets/pets-katrine.svg" alt="Katrine's photo" class="pets-cards-image">    
+                            <h4 class="pets-cards-name">Katrine</h4>
+                            <button class="pets-cards-button">Learn more</button>
+                        </div>
+                        <div class="pets-cards-personal pets-cards-Jennifer">
+                            <img src="./pictures/pets/pets-jennifer.svg" alt="Jennifer's photo" class="pets-cards-image">    
+                            <h4 class="pets-cards-name">Jennifer</h4>
+                            <button class="pets-cards-button">Learn more</button>
+                        </div>
+                        <div class="pets-cards-personal pets-cards-Woody">
+                            <img src="./pictures/pets/pets-woody.svg" alt="Woody's photo" class="pets-cards-image">    
+                            <h4 class="pets-cards-name">Woody</h4>
+                            <button class="pets-cards-button">Learn more</button>
+                        </div>
                     </div>
-                    <div class="pets-cards-personal pets-cards-Jennifer">
-                        <img src="./pictures/pets/pets-jennifer.svg" alt="Jennifer's photo" class="pets-cards-image">    
-                        <h4 class="pets-cards-name">Jennifer</h4>
-                        <button class="pets-cards-button">Learn more</button>
+                    <div class="right-arrow-block">
+                        <svg class="right-arrow" width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929"/>
+                        </svg>
                     </div>
-                    <div class="pets-cards-personal pets-cards-Woody">
-                        <img src="./pictures/pets/pets-woody.svg" alt="Woody's photo" class="pets-cards-image">    
-                        <h4 class="pets-cards-name">Woody</h4>
-                        <button class="pets-cards-button">Learn more</button>
-                    </div>
-                </div>
+                </wrapper>
                 <div class="pets-button">
                     <form action="./pets.html"><button class="pets-button-button">Get to know the rest</button></form>
                 </div>
@@ -120,7 +132,7 @@
                     </div>
                     <div class="icon">
                         <img src="./pictures/helpicons/icon-collars-leashes.svg" alt="Leash icon" class="help-icon-icon">
-                        <p class="help-icon-name">Collars/leashes</p>
+                        <p class="help-icon-name">Collars / leashes</p>
                     </div>
                     <div class="icon">
                         <img src="./pictures/helpicons/icon-sleeping-area.svg" alt="Home icon" class="help-icon-icon">
@@ -139,8 +151,10 @@
                         <h3 class="donation-header">You can also make a donation</h3>
                         <p class="donation-title">Name of the bank / Type of bank account</p>
                         <div class="donation-card">
+                            <a href="#" class="donation-card-link">
                             <img src="./pictures/donation/credit-card.svg" alt="Card icon" class="donation-card-image">
-                            <a href="#" class="donation-card-number">8380 2880 8028 8791 7435</a>
+                            <p class="donation-card-number">8380 2880 8028 8791 7435</p>
+                        </a>
                         </div>
                         <p class="donation-info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </div>
