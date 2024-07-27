@@ -316,10 +316,11 @@ body {
 
 
 .footer {
-    background-image: url(../pictures/startscreen/start-screen-background.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url(../pictures/startscreen/start-screen-background.svg), no-repeat, cover, center;
+
+    background: url(../pictures/startscreen/noise_transparent@2x.png), 
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), repeat, center;
+
     margin: 0;
     padding: 0;
 }

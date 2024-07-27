@@ -114,10 +114,12 @@ body {
 /*-----------------------------------------------------------*/
 
 .start-screen {
-    background-image: url(../pictures/startscreen/start-screen-background.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url(../pictures/startscreen/start-screen-background.svg), no-repeat, cover, center;
+
+    background: linear-gradient(0deg, #211F20, #211F20);
+    background: url(../pictures/startscreen/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), repeat, center;
+    
+
     margin-top: -186px;
 }
 
@@ -626,10 +628,11 @@ body {
 
 
 .footer {
-    background-image: url(../pictures/startscreen/start-screen-background.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url(../pictures/startscreen/start-screen-background.svg), no-repeat, cover, center;
+
+    background: url(../pictures/startscreen/noise_transparent@2x.png), 
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), repeat, center;
+    
     margin: 0;
     padding: 0;
 }
