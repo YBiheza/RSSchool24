@@ -17,16 +17,13 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-/*-------------------------------------------------------------------------------------------header start-----------------------------------------------------------------------*/
- 
+} 
 
 .header {
+    z-index: 10;
+
     flex-wrap: wrap;
     position: relative;
-    z-index: 10;
 }
 
 .container-header {
@@ -44,31 +41,34 @@ body {
 }
 
 .logo-link {
-    text-decoration: none;
     margin: 0;
     padding: 0;
+
+    text-decoration: none;
 }
 
 .logo-title {
+    margin: 0;
+
     font-family: Georgia, serif;
     font-size: 32px;
     font-weight: 400;
     letter-spacing: 0.06em;
     text-align: left;
     color: #545454;
-    margin: 0;
 }
 
 .logo-text {
-    color: #292929;
     margin-left: 4px;
     margin-top: 8px;
+
     font-family: Arial;
     font-size: 13px;
     font-weight: 400;
     line-height: 14.95px;
     letter-spacing: 0.1em;
     text-align: left;
+    color: #292929;
 }
 
 .nav {
@@ -92,6 +92,7 @@ body {
     text-align: left;
     color: #545454;
     text-decoration: none;
+
     transition: 0.3s;
 }
 
@@ -101,6 +102,7 @@ body {
 
 .nav-link-active {
     margin: 0;
+
     font-family: Arial;
     font-size: 15px;
     font-weight: 400;
@@ -109,17 +111,13 @@ body {
     text-decoration: none;
     color: #292929;
     text-decoration: underline;
-    text-decoration-color: rgba(241, 205, 179, 1);
+    text-decoration-color: #f1cdb3;
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
 }
 
-
-
-/*-----------------------------------------------------------*/
-
 .pets {
-    background-color: rgba(246, 246, 246, 1);
+    background-color: #f6f6f6;
 }
 
 .pets-container {
@@ -136,13 +134,14 @@ body {
     margin: 0;
     margin-left: 400px;
     margin-right: 400px;
+    padding: 0;
+
     font-family: Georgia;
     font-size: 35px;
     font-weight: 400;
     letter-spacing: 0.06em;
     line-height: 45.5px;
     text-align: center;
-    padding: 0;
 }
 
 .pets-cards {
@@ -152,7 +151,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /*position: relative;*/
     flex-wrap: wrap;
     gap: 30px 40px;
     padding-bottom: 15px;
@@ -163,38 +161,43 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #fafafa;
     width: 270px;
+
+    background-color: #fafafa;
+
     transition: 0.3s;
 }
 
 .pets-cards-name {
     margin: 30px 0;
+
     font-family: Georgia;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.06em;
     line-height: 22.72px;
     text-align: center;
-    color: rgba(84, 84, 84, 1);
+    color: #545454;
 }
 
 .pets-cards-button {
-    width: Hug (187px)px;
-    height: Hug (52px)px;
+    width: 191px;
+    height: 52px;
     padding: 15px 45px 15px 45px;
     background-color: #fafafa;
     gap: 10px;
-    border-radius: 100px;
-    border: 2px 0px 0px 0px;  
-    border: 2px solid rgba(241, 205, 179, 1);
     margin-bottom: 30px;
+
     font-family: Georgia;
     font-size: 17px;
     font-weight: 400;
     letter-spacing: 0.06em;
     text-align: left;
-    color: rgba(41, 41, 41, 1);
+    color: #292929;
+
+    border-radius: 100px; 
+    border: 2px solid #f1cdb3;
+
     transition: 0.3s;
 }
 
@@ -205,8 +208,8 @@ body {
 
 .pets-cards-personal:hover .pets-cards-button {
     cursor: pointer;
-    border-color: #FDDCC4;
-    background-color: #FDDCC4;
+    border-color: #fddcc4;
+    background-color: #fddcc4;
 }
 
 .pagination {
@@ -222,11 +225,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgba(205, 205, 205, 1);
     padding: 14px 13px 15px 12px;
-    border-radius: 100px;
     width: 52px;
     height: 52px;
+
+
+    border: 2px solid #cdcdcd;
+    border-radius: 100px;
 }
 
 .pagination-left-arrow-once-block {
@@ -234,15 +239,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 2px solid rgba(205, 205, 205, 1);
     padding: 14px 0px 15px 0px;
-    border-radius: 100px;
     width: 52px;
     height: 52px;
 
+    border: 2px solid #cdcdcd;
+    border-radius: 100px;
 }
 
 .pagination-left-arrow-double-block {
@@ -264,10 +266,11 @@ body {
     height: 52px;
     padding: 14px 0px 15px 0px;
     gap: 0px;
+
+    color: #292929;
+
     border-radius: 100px;
-    opacity: 0px;
-    background-color: rgba(241, 205, 179, 1);
-    color: rgba(41, 41, 41, 1);
+    background-color: #f1cdb3;
 }
 
 
@@ -281,15 +284,15 @@ body {
     width: 52px;
     height: 52px;
     padding: 14px 0px 15px 0px;
+
     border-radius: 100px;
-    border: 2px;
-    opacity: 0px;
-    border: 2px solid rgba(241, 205, 179, 1);
+    border: 2px solid #f1cdb3;
+
     transition: 0.3s;
 }
 .pagination-right-arrow-once-block:hover {
-    background-color: #F1CDB3;
-    border-color: #F1CDB3;
+    background-color: #f1ccb1;
+    border-color: #f1cdb3;
     cursor: pointer;
 }
 
@@ -303,27 +306,27 @@ body {
     width: 52px;
     height: 52px;
     padding: 14px 0px 15px 0px;
+
     border-radius: 100px;
-    border: 2px;
-    opacity: 0px;
-    border: 2px solid rgba(241, 205, 179, 1);
+    border: 2px solid #f1cdb3;
+
     transition: 0.3s;
 }
 
 .pagination-right-arrow-double-block:hover {
-    background-color: #F1CDB3;
-    border-color: #F1CDB3;
+    background-color: #f1cdb3;
+    border-color: #f1ccb1;
     cursor: pointer;
 }
 
-
-/*-----------------------------------------------------------*/
-
-
 .footer {
-    background-image: url(../pictures/startscreen/start-screen-background.svg), no-repeat, cover, center;
+    background-image: url(../pictures/startscreen/start-screen-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
-    background: url(../pictures/startscreen/noise_transparent@2x.png), 
+
+    background: url(../pictures/startscreen/noise_transparent@2x.png),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), repeat, center;
 
     margin: 0;
@@ -334,8 +337,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /*align-items: flex-end;*/
-    /*flex-wrap: wrap;  */  
 }
 
 .container.container-footer {
@@ -346,13 +347,15 @@ body {
 .contacts {
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
     align-items: flex-start;
     margin: 16px 0 60px 0;
     row-gap: 40px;
 }
 
 .contacts-title {
+    margin: 0;
+    padding: 0;
+
     font-family: Georgia;
     font-size: 35px;
     font-weight: 400;
@@ -360,8 +363,6 @@ body {
     line-height: 45.5px;
     text-align: left;
     color: #ffffff;
-    margin: 0;
-    padding: 0;
 }
 
 .contacts-email {
@@ -371,6 +372,7 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
     text-decoration: none;
 }
 
@@ -382,7 +384,6 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
-
 }
 
 .contacts-email-image {
@@ -390,15 +391,16 @@ body {
 }
 
 .contacts-email-adress {
+    margin: 0;
+    padding: 0;
+
     font-family: Georgia;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: left;
-    color: rgba(241, 205, 179, 1);
-    margin: 0;
-    padding: 0;
+    color: #f1cdb3;
 }
 
 .contacts-phone {
@@ -417,6 +419,7 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
     text-decoration: none;
 }
 
@@ -425,15 +428,16 @@ body {
 }
 
 .contacts-phone-number {
+    margin: 0;
+    padding: 0;
+
     font-family: Georgia;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: left;
-    color: rgba(241, 205, 179, 1);
-    margin: 0;
-    padding: 0;
+    color: #f1cdb3;
 }
 
 .coordinates {
@@ -446,6 +450,9 @@ body {
 }
 
 .coordinates-title {
+    margin: 0;
+    padding: 0;
+
     font-family: Georgia;
     font-size: 35px;
     font-weight: 400;
@@ -453,8 +460,6 @@ body {
     line-height: 45.5px;
     text-align: left;
     color: #ffffff;
-    margin: 0;
-    padding: 0;
 }
 
 .coordinates-address-one {
@@ -475,6 +480,7 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
     text-decoration: none;
 }
 
@@ -483,15 +489,16 @@ body {
 }
 
 .coordinates-address-one-adress {
+    margin: 0;
+    padding: 0;
+
     font-family: Georgia;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: left;
-    color: rgba(241, 205, 179, 1);
-    margin: 0;
-    padding: 0;
+    color: #f1cdb3;
 }
 
 .coordinates-address-two {
@@ -510,6 +517,7 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+
     text-decoration: none;
 }
 
@@ -518,16 +526,17 @@ body {
 }
 
 .coordinates-address-two-adress {
+    margin: 0;
+    padding: 0;
+    padding-top: 3px;
+    
     font-family: Georgia;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: left;
-    color: rgba(241, 205, 179, 1);
-    margin: 0;
-    padding: 0;
-    padding-top: 3px;
+    color: #f1cdb3;
 }
 
 .footer-image {
