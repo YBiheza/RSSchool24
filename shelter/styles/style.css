@@ -8,9 +8,9 @@ html {
 
 body {
     min-height: 100vh;
-    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -19,9 +19,24 @@ body {
     margin-right: auto;
 }
 
+@font-face {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
 
+    src: local("Georgia"),
+        url("../fonts/georgia/georgia-regular.ttf");
+}
+
+@font-face {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+
+    src: local("Arial"),
+        url("../fonts/arial/arial-regular.ttf");
+}
 /*-------------------------------------------------------------------------------------------header start-----------------------------------------------------------------------*/
- 
 
 .header {
     flex-wrap: wrap;
@@ -90,6 +105,7 @@ body {
     text-align: left;
     color: #cdcdcd;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .nav-link:hover {
@@ -128,7 +144,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    /*background-color: #c0ffac;*/
 }
 
 .container-main-start-screen {
@@ -183,12 +198,15 @@ body {
     padding: 15px 45px 15px 45px;
     gap: 10px;
     border-radius: 100px;
+    border-color: transparent;
     opacity: 0px;
     color: #292929;
+    transition: 0.3s;
 }
 
 .content-button:hover {
     background-color: #FDDCC4;
+    border-color: transparent;
     color: #292929;
     cursor: pointer;
 }
@@ -311,6 +329,7 @@ body {
     border: 2px solid #f1cdb3;
     padding: 23px 19px 23px 19px;
     border-radius: 100px;
+    transition: 0.3;
 }
 
 .left-arrow-block:hover {
@@ -340,6 +359,7 @@ body {
     width: 270px;
     gap: 30px;
     padding-bottom: 30px;
+    transition: 0.3s;
 }
 
 .pets-cards-image {
@@ -364,7 +384,6 @@ body {
     padding: 15px 45px 15px 45px;
     gap: 10px;
     border-radius: 100px;
-    /*border: 2px;*/  
     border: 2px solid rgba(241, 205, 179, 1);
     font-family: Georgia;
     font-size: 17px;
@@ -373,6 +392,7 @@ body {
     text-align: left;
     color: rgba(41, 41, 41, 1);
     background-color: #fafafa;
+    transition: 0.3s;
 }
 
 .pets-cards-personal:hover {
@@ -394,6 +414,7 @@ body {
     border: 2px solid rgba(241, 205, 179, 1);
     border-radius: 100px;
     padding: 23px 19px 23px 19px;
+    transition: 0.3s;
 }
 
 .right-arrow {
@@ -428,6 +449,7 @@ body {
     letter-spacing: 0.06em;
     text-align: left;
     color: rgba(41, 41, 41, 1);
+    transition: 0.3s;
 }
 
 .pets-button-button:hover {
@@ -580,22 +602,13 @@ body {
     margin: 0;
     padding: 0;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .donation-card-link:hover {
     background-color: #FDDCC4;
     cursor: pointer;
 }
-
-/*.donation-card::before {
-    content: "";
-    border-radius: 9px;
-    background: rgb(160, 86, 34);
-    width: 349px;
-    height: 43px;
-    position: absolute;
-    z-index: -1;
-}*/
 
 .donation-card-image {
     margin: 10px 15px;
@@ -640,9 +653,7 @@ body {
 .container-footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    /*align-items: flex-end;*/
-    /*flex-wrap: wrap;  */  
+    justify-content: space-between;  
 }
 
 .container.container-footer {
@@ -653,7 +664,6 @@ body {
 .contacts {
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
     align-items: flex-start;
     margin: 16px 0 60px 0;
     row-gap: 40px;

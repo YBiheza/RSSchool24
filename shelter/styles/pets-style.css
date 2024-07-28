@@ -92,6 +92,7 @@ body {
     text-align: left;
     color: #545454;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .nav-link:hover {
@@ -164,6 +165,7 @@ body {
     align-items: center;
     background-color: #fafafa;
     width: 270px;
+    transition: 0.3s;
 }
 
 .pets-cards-name {
@@ -193,6 +195,7 @@ body {
     letter-spacing: 0.06em;
     text-align: left;
     color: rgba(41, 41, 41, 1);
+    transition: 0.3s;
 }
 
 .pets-cards-personal:hover {
@@ -281,7 +284,8 @@ body {
     border-radius: 100px;
     border: 2px;
     opacity: 0px;
-    border: 2px solid rgba(241, 205, 179, 1)
+    border: 2px solid rgba(241, 205, 179, 1);
+    transition: 0.3s;
 }
 .pagination-right-arrow-once-block:hover {
     background-color: #F1CDB3;
@@ -302,7 +306,8 @@ body {
     border-radius: 100px;
     border: 2px;
     opacity: 0px;
-    border: 2px solid rgba(241, 205, 179, 1)
+    border: 2px solid rgba(241, 205, 179, 1);
+    transition: 0.3s;
 }
 
 .pagination-right-arrow-double-block:hover {
