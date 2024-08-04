@@ -1022,4 +1022,48 @@ body {
     .about-media img {
         height: 353px;
     }
+
+    .pets-title {
+        margin: 42px 0;
+        padding: 0;
+
+        font-family: Georgia;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .pets-wrapper {
+        flex-direction: column;
+    }
+
+    .pets-cards {
+        margin: 0 15px;
+    }
+
+    .pets-cards-Jennifer {
+        display: none;
+    }
+
+    .pets-cards-Woody {
+        display: none;
+    }
+
+    .left-arrow-block {
+        position: absolute;
+        z-index: 7;
+        order: 2;
+        left: 43px;
+        margin-top: 455px;
+    }
+
+    .right-arrow-block {
+        position: absolute;
+        z-index: 7;
+        order: 2;
+        right: 43px;
+        margin-top: 455px;
+    }
 }
