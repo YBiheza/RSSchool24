@@ -78,11 +78,11 @@ body {
 }
 
 .burger-menu-line:first-child {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 }
 
 .burger-menu-line:last-child {
-    transform: translateY(8px);
+    transform: translateY(10px);
 }
 
 .logo {
@@ -921,7 +921,7 @@ body {
 
 /*-------------------------------------------------------------------------------------------*/
 
-@media (max-width: 768px) { /*до этой шіріны работют эті правіла*/
+@media (max-width: 767px) { /*до этой шіріны работют эті правіла*/
     .container {
         margin: 0 10px;
     }
@@ -933,6 +933,7 @@ body {
 
     .burger-menu {
         display: block;
+        margin: 17px 15px;
     }
 
     .nav {
@@ -974,10 +975,6 @@ body {
         padding: 0;
         width: 260px;
     }
-
-    /*.container {
-        margin: 0 10px;
-    }*/
 
     .container-about {
         flex-direction: column;
@@ -1130,7 +1127,7 @@ body {
     .donation-wrapper {
         flex-direction: column;
         margin: 0;
-        padding: 42px 0;
+        padding: 42px 0 32px 0;
     }
 
     .donation-header {
@@ -1150,6 +1147,7 @@ body {
         margin: 0;
         padding: 0;
         order: 1;
+        align-items: center;
     }
 
     .donation-media {
@@ -1195,5 +1193,88 @@ body {
         margin: 20px 10px 42px 10px;
 
         text-align: justify;
+    }
+
+    .container.container-footer {
+        margin: 0 10px;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .contacts {
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+
+    .footer-title {
+        font-family: Georgia;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .contacts-email {
+        margin: 0 25px;
+    }
+
+    .contacts-phone {
+        margin: 1px 25px 0 32px;
+    }
+
+    .coordinates {
+        gap: 40px;
+        margin-bottom: 38px;
+    }
+
+    .coordinates-title {
+        margin: 0 9px 0 27px;
+    }
+
+    .coordinates-address-one {
+        margin: 0 4px 0 17px;
+    }
+
+    .coordinates-address-two {
+        margin: 0 4px 0 17px;
+    }
+
+    .footer-image {
+        height: 269px;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 1279px) { /*до этой шіріны работют эті правіла*/
+    .container {
+        margin: 0 30px;
+    }
+
+    .container-header {
+        margin: 30px 30px 60px 30px;
+        padding: 0 0px;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .content {
+        margin: 184px 117px 100px 124px;
+        width: 100%;
+    }
+
+    .content-button {
+        margin-left: 124px;
+    }
+
+    .image img {
+        margin: 0 -70px 0 140px;
+        width: 569px;
     }
 }
