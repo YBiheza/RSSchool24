@@ -648,7 +648,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 350px;
+    /*width: 350px;*/
     height: 43px;
     margin: 0;
     padding: 0;
@@ -1044,7 +1044,7 @@ body {
 
     .pets-wrapper {
         flex-direction: column;
-        margin-bottom: 114px;
+        margin-bottom: 113px;
     }
 
     .pets-cards {
@@ -1080,6 +1080,7 @@ body {
     }
 
     .help-container {
+        padding: 0;
         margin: 0 10px;
     }
 
@@ -1099,6 +1100,7 @@ body {
     .help-icons {
         justify-content: flex-start;
         margin: 0 5px;
+        margin-bottom: 42px;
         gap: 30px;
     }
 
@@ -1119,5 +1121,79 @@ body {
         line-height: 16.5px;
         letter-spacing: 0.06em;
         text-align: center;
+    }
+
+    .donation-container {
+        margin: 0 10px;
+    }
+
+    .donation-wrapper {
+        flex-direction: column;
+        margin: 0;
+        padding: 42px 0;
+    }
+
+    .donation-header {
+        margin: 0;
+        padding: 0;
+        margin: 0 40px;
+
+        font-family: Georgia;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .donation-content {
+        margin: 0;
+        padding: 0;
+        order: 1;
+    }
+
+    .donation-media {
+        order: 2;
+        width: 260px;
+    }
+
+    .donation-title {
+        margin: 20px 13px;
+        padding: 0;
+
+        font-family: Georgia;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+
+    .donation-card {
+        margin: 0 9px;
+    }
+
+    .donation-card-image {
+        margin: 10px 15px 10px 0;
+    }
+
+    .donation-card-link {
+        padding: 10px 15px;
+    }
+
+    .donation-card-number {
+        margin: 0;
+
+        font-family: Georgia;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 16.5px;
+        letter-spacing: 0.06em;
+        text-align: left;
+    }
+
+    .donation-info {
+        margin: 20px 10px 42px 10px;
+
+        text-align: justify;
     }
 }
