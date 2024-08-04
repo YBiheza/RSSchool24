@@ -365,7 +365,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 23px 19px 23px 19px;
+    padding: 22px 18px 22px 18px;
 
     border: 2px solid #f1cdb3;
     border-radius: 100px;
@@ -458,7 +458,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 23px 19px 23px 19px;
+    padding: 22px 18px 22px 18px;
 
     border: 2px solid #f1cdb3;
     border-radius: 100px;
@@ -982,6 +982,7 @@ body {
     .container-about {
         flex-direction: column;
         margin: 42px 10px;
+        margin-bottom: 0;
     }
 
     .about-content {
@@ -1018,11 +1019,15 @@ body {
     .about-media {
         order: 2;
         padding: 0;
-        padding: 42px 20px;
+        padding: 42px 20px 37px 20px;
     }
 
     .about-media img {
         height: 353px;
+    }
+
+    .pets-container {
+        padding-bottom: 42px;
     }
 
     .pets-title {
@@ -1039,6 +1044,7 @@ body {
 
     .pets-wrapper {
         flex-direction: column;
+        margin-bottom: 114px;
     }
 
     .pets-cards {
@@ -1057,15 +1063,19 @@ body {
         position: absolute;
         z-index: 7;
         order: 2;
-        left: 43px;
-        margin-top: 455px;
+        left: 68px;
+        margin-top: 454px;
     }
 
     .right-arrow-block {
         position: absolute;
         z-index: 7;
         order: 2;
-        right: 43px;
-        margin-top: 455px;
+        right: 68px;
+        margin-top: 454px;
+    }
+
+    .pets-button {
+        margin: 0 20px;
     }
 }
