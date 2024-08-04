@@ -400,6 +400,8 @@ body {
     gap: 30px;
     padding-bottom: 30px;
 
+    border-radius: 9px;
+
     transition: 0.3s;
 }
 
