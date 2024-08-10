@@ -1641,10 +1641,6 @@ body {
         margin: 0 10px;
     }
 
-    .burger-menu {
-        display: none;
-    }
-
     .container-header {
         margin: 30px 10px 60px 10px;
         padding: 0 10px;
@@ -1705,8 +1701,6 @@ body {
         width: 84%;
         margin-left: 40px;
         margin-top: 105px;
-        /*padding-top: 105px;
-        padding-left: 40px;*/
     }
 
     .image img {
