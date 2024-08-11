@@ -216,7 +216,6 @@ body {
 }
 
 .pets-cards-button {
-    width: 191px;
     height: 52px;
     padding: 15px 45px 15px 45px;
     background-color: #fafafa;
@@ -665,6 +664,16 @@ body {
         width: 47%;
     }
     
+}
+
+@media (width < 768px) {
+    .nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
 }
 
 @media (max-width: 767px) {
