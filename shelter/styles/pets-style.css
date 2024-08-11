@@ -35,6 +35,39 @@ body {
     justify-content: space-between;
 }
 
+.burger-menu {
+    display: none;
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 22px;
+    margin: 9px 0 9px 46px;
+
+    background-color: transparent;
+
+    border: none;
+}
+
+.burger-menu-line {
+    position: absolute;
+    
+    width: 30px;
+    height: 2px;
+
+    background-color: #000;
+}
+
+.burger-menu-line:first-child {
+    transform: translateY(-10px);
+}
+
+.burger-menu-line:last-child {
+    transform: translateY(10px);
+}
+
+
 .logo {
     display: flex;
     flex-direction: column;
@@ -165,6 +198,8 @@ body {
 
     background-color: #fafafa;
 
+    border-radius: 9px;
+
     transition: 0.3s;
 }
 
@@ -181,7 +216,6 @@ body {
 }
 
 .pets-cards-button {
-    width: 191px;
     height: 52px;
     padding: 15px 45px 15px 45px;
     background-color: #fafafa;
@@ -541,4 +575,331 @@ body {
 
 .footer-image {
     display: flex;
+}
+
+@media (max-width: 1230px) {
+    .container-header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }    
+
+    .pets-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .container-footer {
+        padding-left: 15px;
+        padding-right: 15px;
+        flex-wrap: wrap;
+    }
+
+    .coordinates {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .pets-title {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    
+}
+
+@media (max-width: 920px) {
+    .pets-cards {
+        justify-content: space-evenly;
+    }
+    
+}
+
+@media (max-width: 840px) {
+    .pets-title {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .container-header {
+        padding-left: 30px;
+        padding-right: 31px;
+    }
+
+    .pets-container {
+        padding-bottom: 76px;
+    }
+
+    .pets-cards {
+        margin-left: 77px;
+        margin-right: 76px;
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+
+    .pets-cards-Scarlett {
+        display: none;
+    }
+
+    .pets-cards-Freddie {
+        display: none;
+    }
+
+    .container.container-footer {
+        padding: 0 63px;
+        padding-top: 31px;
+        column-gap: 45px;
+        justify-content: space-evenly;
+    }
+
+    .contacts {
+        margin-top: 0;
+        width: 45%;
+    }
+
+    .coordinates {
+        margin-top: 0;
+        width: 47%;
+    }
+    
+}
+
+@media (width < 768px) {
+    .nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .pets-cards {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 690px) {
+    .container.container-footer {
+        margin: 0 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 630px) {
+
+    .pets-title {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .pets-cards {
+        gap: 40px 10px;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .pets-cards-Sophia {
+        display: none;
+    }
+    
+    .pets-cards-Timmy {
+        display: none;
+    }
+
+    .pets-cards-Charly {
+        display: none;
+    }
+
+    .container.container-footer {
+        margin: 0 10px;
+        padding: 0;
+        padding-top: 31px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacts {
+        width: 90%;
+    }
+
+    .coordinates {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 530px) {
+    .pets-title {
+        font-family: Georgia;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+}
+
+@media (max-width: 475px) {
+    .pets-title {
+        font-family: Georgia;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .contacts {
+        width: 90%;
+    }
+
+    .coordinates {
+        width: 90%;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        margin: 0 10px;
+    }
+
+    .container-header {
+        margin: 30px 10px 60px 10px;
+        padding: 0 10px;
+    }
+
+    .burger-menu {
+        display: block;
+        margin: 17px 15px;
+    }
+
+    .pets-title {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .pagination {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 365px) {
+    .pagination {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 340px) {
+
+    .container-header {
+        margin: 30px 10px 28px 10px;
+    }
+    .pets-container {
+        padding-top: 31px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-top: 29px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container-header {
+        margin: 30px 10px 28px 10px;
+    }
+    .pets-container {
+        padding-top: 13px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-top: 29px;
+        padding-bottom: 43px;
+    }
+
+    .pets-title {
+        padding-top: 31px;
+    }
+
+    .pets-cards {
+        margin-top: 40px;
+        gap: 30px 10px;
+        margin-bottom: 27px;
+    }
+
+    .container.container-footer {
+        margin: 0 10px;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacts {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .contacts-title {
+        font-family: Georgia;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .contacts-email {
+        margin: 0 25px;
+    }
+
+    .contacts-phone {
+        margin: 1px 25px 0 32px;
+    }
+
+    .coordinates {
+        gap: 40px;
+        margin-bottom: 38px;
+        width: 100%;
+    }
+
+    .coordinates-title {
+        margin: 0 9px 0 10px;
+        font-family: Georgia;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+    }
+
+    .coordinates-address-one {
+        margin: 0 4px 0 0;
+    }
+
+    .coordinates-address-two {
+        margin: 0 4px 0 0px;
+    }
+
+    .footer-image {
+        height: 269px;
+        margin-top: 0;
+    }
+    
 }
