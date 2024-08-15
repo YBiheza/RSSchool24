@@ -1082,6 +1082,8 @@ body {
     .image img {
         margin: 0;
         padding: 0;
+        width: 100%;
+        height: auto
     }
 
     .about-content {
@@ -1177,6 +1179,23 @@ body {
 }
 
 
+@media (max-width: 768px) {
+
+.image {
+
+height: 591px;
+
+width: 610px;
+
+margin-left: 130px;
+
+padding-left: 25px;
+
+align-items: flex-end;
+
+}
+
+
 @media (width < 768px) {
     .nav {
         display: none;
@@ -1187,12 +1206,14 @@ body {
     }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 731px) {
     .image {
         height: 591px;
         width: 610px;
-        margin-left: 80px; /*108*/
+        margin-left: 130px; /*108*  80*/
         padding-left: 25px;
+        height: 591px;
+        align-items: flex-end;
     }
 
     .pets-cards {
