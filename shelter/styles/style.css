@@ -1179,23 +1179,6 @@ body {
 }
 
 
-@media (max-width: 768px) {
-
-.image {
-
-height: 591px;
-
-width: 610px;
-
-margin-left: 130px;
-
-padding-left: 25px;
-
-align-items: flex-end;
-
-}
-
-
 @media (width < 768px) {
     .nav {
         display: none;
