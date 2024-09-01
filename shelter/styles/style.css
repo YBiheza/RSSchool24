@@ -1180,13 +1180,40 @@ body {
 
 
 @media (width < 768px) {
-    .nav {
-        display: none;
-    }
 
     .burger-menu {
         display: block;
+        position: fixed;
+        top: 45px;
+        right: 25px;
+        z-index: 5;
     }
+
+    .nav {
+        position: fixed;
+        width: 85%;
+        top: 0;
+        left: 15%;
+        background: #292929;
+        height: 100%;
+        z-index: 4;
+        padding: 248px 38px;
+        align-items:center
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-link-active,
+    .nav-link {
+        font-family: Arial;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 51.2px;
+        text-align: left;
+    }
+
 }
 
 @media (max-width: 731px) {
