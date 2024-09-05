@@ -10,7 +10,7 @@ function Checking () {
 
 Checking();
 
-(function () {
+(function () { //бургер
     const burgerMenu = document.querySelector('.burger-menu');
     const menu = document.querySelector('.nav');
     const body = document.body;
@@ -42,4 +42,114 @@ Checking();
         });
     });
 
+}());
+
+
+//popup
+const cards = document.querySelectorAll('.pets-cards-personal');
+    const popupWindow = document.querySelector('.popup');
+    const overlay = document.querySelector('.overlay');
+    const body = document.body;
+    const cross = document.querySelector('.cross');
+
+
+document.querySelectorAll('.pets-cards-personal').forEach(card => {
+    card.addEventListener('click', function() {
+        const animalId = this.getAttribute('data-id');
+        fetch('../pets.json')
+            .then(response => response.json())
+            .then(data => {
+                const animal = data.find(item => item.name == animalId);
+                if (animal) {
+                    showPopup(animal);
+                    popupWindow.classList.add('popup-active');
+                    /*body.classList.add('no-scroll');*/
+                    overlay.classList.add('overlay-active');
+                    document.body.style.overflow = 'hidden';
+                    cross.classList.add('cross-active')
+                }
+            });
+    });
+});
+
+function showPopup(animal) {
+
+    const kindabreed = `${animal.type} - ${animal.breed}`;
+    const age = `<strong>Age:</strong> ${animal.age}`;
+    const inoculations = `<strong>Inoculations:</strong> ${animal.inoculations}`;
+    const diseases = `<strong>Diseases:</strong> ${animal.diseases}`;
+    const parasites = `<strong>Parasites:</strong> ${animal.parasites}`;
+
+
+    const popup = document.querySelector('.pets-cards-popup');
+    popup.querySelector('.popup-image').src = animal.img;
+    popup.querySelector('.popup-name').textContent = animal.name;
+    popup.querySelector('.popup-breed').innerHTML = kindabreed;
+    popup.querySelector('.popup-description').innerHTML = animal.description;
+    popup.querySelector('.popup-age').innerHTML = age;
+    popup.querySelector('.popup-inoculations').innerHTML = inoculations;
+    popup.querySelector('.popup-diseases').innerHTML = diseases;
+    popup.querySelector('.popup-parasites').innerHTML = parasites;
+}
+
+overlay.addEventListener('click', () => {
+    popupWindow.classList.remove('popup-active');
+    body.classList.remove('no-scroll');
+    overlay.classList.remove('overlay-active');
+    document.body.style.overflow = '';
+    
+});
+
+document.querySelector('.cross').addEventListener('click', function() {
+    popupWindow.classList.remove('popup-active');
+    body.classList.remove('no-scroll');
+    overlay.classList.remove('overlay-active');
+    document.body.style.overflow = '';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function () { //слайдер
+    const petsCards = document.querySelector('.pets-cards');
+    const leftArrow = document.querySelector('.left-arrow-block');
+    const rightArrow = document.querySelector('.right-arrow-block');
+    const quantity = document.querySelectorAll('.pets-cards-personal').length;
+    let currentSlide = 0;
+
+    
+    function NewPosition(position) {
+        petsCards.style.transform = `translateX(-${position * 100}%)`;
+    }
+
+    
+    function slideLeft() {
+        if (currentSlide === 0) {
+            currentSlide = quantity - 1;
+        } else {
+            currentSlide--;
+        }
+        NewPosition(currentSlide);
+    }
+
+    function slideRight() {
+        if (currentSlide === quantity - 1) {
+            currentSlide = 0;
+        } else {
+            currentSlide++;
+        }
+        NewPosition(currentSlide);
+    }
+
+    leftArrow.addEventListener('click', slideLeft);
+    rightArrow.addEventListener('click', slideRight);
 }());
