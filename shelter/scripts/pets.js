@@ -180,61 +180,8 @@ window.addEventListener('resize', () => {
     
         const startIndex = (currentPage - 1) * itemsPerPage;
 
-        let petsToShow = [];
-        let array = [];
-    
-
-
-
-        while (true) {
-            while (array.length < itemsPerPage) {
-                const newElement = petsArray[Math.floor(Math.random() * petsArray.length)];
-                if (!array.includes(newElement)) {
-                    array.push(newElement);
-                }
-            }
+                const petsToShow = petsArray.slice(startIndex, startIndex + itemsPerPage);
         
-            const uniqueArray = [...new Set(array)];
-        
-            if (uniqueArray.length < itemsPerPage) {
-                while (uniqueArray.length < itemsPerPage) {
-                    const newElement = petsArray[Math.floor(Math.random() * petsArray.length)];
-                    if (!uniqueArray.includes(newElement)) {
-                        uniqueArray.push(newElement);
-                    }
-                }
-            }
-        
-            if (uniqueArray.length === itemsPerPage && uniqueArray.length === new Set(uniqueArray).size) {
-                petsToShow = [...uniqueArray];
-                array = [];
-                break;
-            } else {
-                const uniqueArray = [...new Set(array)];
-                const newElement = petsArray[Math.floor(Math.random() * petsArray.length)];
-                if (!uniqueArray.includes(newElement)) {
-                    uniqueArray.push(newElement);
-                }
-            }
-        }
-        
-        petsToShow.forEach(item => {
-            let index = petsArray.findIndex(obj => obj === item);
-            if (index !== -1) {
-                petsArray.splice(index, 1);
-              }
-        })
-
-
-
-
-
-
-
-
-
-
-
 
 
         petsToShow.forEach(pet => {
