@@ -114,11 +114,11 @@ let currentScreenWidth = window.innerWidth;
 let itemsPerPage = 8;
 let currentPage = 1;
 
-function createPetsArray() {
+/*function createPetsArray() {
     let petsTempArray = [...petsData, ...petsData, ...petsData, ...petsData, ...petsData, ...petsData]; // 6 повторений
     petsTempArray = shuffle(petsTempArray); // Перемешивание
     petsArray = petsTempArray;
-  }
+  }*/
 
 function updateItemsPerPage() {
     currentScreenWidth = window.innerWidth; // Обновляем текущую ширину экрана

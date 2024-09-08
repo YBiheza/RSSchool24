@@ -137,6 +137,8 @@ let nextCards = [];
 let previousCardsStack = [];
 let nextCardsStack = [];
 let prevSlideCards = [];
+let previousCardsStackLeft = [];
+let previousCardsStackRight = [];
 
 function updateNumVisibleCards() {
   const width = window.innerWidth;
@@ -254,22 +256,53 @@ rightArrow.addEventListener('click', () => {
         }
         renderSlider(currentCards); // Update the UI with new cards
     });*/
+
+
+    function getPreviousSlide() {
+        const previousCards = [];
+        let newCards = [];
+
+        newCards = getNextSlide();
+        
+        // Выбираем карточки, которых нет на экране сейчас и не входят в следующий слайд
+        let availablePets = petsData.filter(pet => 
+            !currentCards.includes(pet) /*&& !newCards.includes(pet)*/
+        );
+      
+        availablePets = shuffle(availablePets); // Перемешиваем доступные карточки
+    
+        for (let i = 0; i < numVisibleCards; i++) {
+            previousCards.push(availablePets[i]);
+        }
+    
+        return previousCards;
+    }
+
+
+
     let tempArr = [];
     rightArrow.addEventListener('click', () => {
-        previousCardsStack = [...currentCards];
+        if (previousCardsStackRight.length > 0) {
+            previousCardsStackLeft = [...currentCards];
+            currentCards = [...previousCardsStackRight];
+            previousCardsStackRight = [];
+            renderSlider(currentCards);
+        } else {
+        previousCardsStackLeft = [...currentCards];
         currentCards = getNextSlide();
         renderSlider(currentCards);
+        }
     });
 
     leftArrow.addEventListener('click', () => {
-        if (previousCardsStack.length === 0) {
-            previousCardsStack = [...currentCards];
+        if (previousCardsStackLeft.length === 0) {
+            previousCardsStackRight = [...currentCards];
             currentCards = getNextSlide();
             renderSlider(currentCards);
         } else {
-        tempArr = [...previousCardsStack];
-        previousCardsStack = [...currentCards];
-        currentCards = [...tempArr];
+        previousCardsStackRight = [...currentCards];
+        currentCards = [...previousCardsStackLeft];
+        previousCardsStackLeft = [];
         renderSlider(currentCards);
         }
     })
