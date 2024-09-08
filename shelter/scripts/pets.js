@@ -121,7 +121,7 @@ let currentPage = 1;
   }*/
 
 function updateItemsPerPage() {
-    currentScreenWidth = window.innerWidth; // Обновляем текущую ширину экрана
+    currentScreenWidth = window.innerWidth; 
 
     if (currentScreenWidth >= 1280) {
       itemsPerPage = 8;
@@ -143,50 +143,104 @@ function shuffle (array) {
   }
 
   window.addEventListener('resize', () => {
-    updateItemsPerPage(); // Пересчитываем количество карточек на странице
+    updateItemsPerPage();
 });
 
 
 function loadPetsData() {
-    fetch('../pets.json') // Путь к твоему JSON-файлу
-      .then(response => response.json()) // Преобразуем ответ в формат JSON
+    fetch('../pets.json') 
+      .then(response => response.json()) 
       .then(data => {
-        // Сохранение и обработка данных
-        petsArray = [...data, ...data, ...data, ...data, ...data, ...data]; // 6 повторений
-        petsArray = shuffle(petsArray); // Перемешивание массива
+        petsArray = [...data, ...data, ...data, ...data, ...data, ...data]; 
+        petsArray = shuffle(petsArray);
         updateItemsPerPage();
         updatePetsPage(petsArray);
       })
-      .catch(error => console.error('Ошибка загрузки JSON:', error)); // Обработка ошибок
+      .catch(error => console.error('Ошибка загрузки JSON:', error));
   }
 
   /*---------------------------------------------*/
 window.addEventListener('resize', () => {
-    updateItemsPerPage(); // Recalculate items per page
+    updateItemsPerPage(); 
     const totalPages = Math.ceil(petsArray.length / itemsPerPage);
 
-    // Adjust currentPage if it exceeds the number of total pages after resize
     if (currentPage > totalPages) {
         currentPage = totalPages;
     }
 
-    updatePetsPage(petsArray); // Reload pets with new items per page
+    updatePetsPage(petsArray);
 });
 /*------------------------------------------------*/
 
     function updatePetsPage(petsArray) {
+
     let paginationPage = document.querySelector('.pagination-page');
         const petsContainer = document.querySelector('.pets-cards');
-        petsContainer.innerHTML = ''; // Очищаем существующие карточки
+        petsContainer.innerHTML = '';
     
-        // Получаем питомцев для текущей страницы
         const startIndex = (currentPage - 1) * itemsPerPage;
-        const petsToShow = petsArray.slice(startIndex, startIndex + itemsPerPage);
+
+        let petsToShow = [];
+        let array = [];
     
+
+
+
+        while (true) {
+            while (array.length < itemsPerPage) {
+                const newElement = petsArray[Math.floor(Math.random() * petsArray.length)];
+                if (!array.includes(newElement)) {
+                    array.push(newElement);
+                }
+            }
+        
+            const uniqueArray = [...new Set(array)];
+        
+            if (uniqueArray.length < itemsPerPage) {
+                while (uniqueArray.length < itemsPerPage) {
+                    const newElement = petsArray[Math.floor(Math.random() * petsArray.length)];
+                    if (!uniqueArray.includes(newElement)) {
+                        uniqueArray.push(newElement);
+                    }
+                }
+            }
+        
+            if (uniqueArray.length === itemsPerPage && uniqueArray.length === new Set(uniqueArray).size) {
+                petsToShow = [...uniqueArray];
+                array = [];
+                break;
+            } else {
+                const uniqueArray = [...new Set(array)];
+                const newElement = petsArray[Math.floor(Math.random() * petsArray.length)];
+                if (!uniqueArray.includes(newElement)) {
+                    uniqueArray.push(newElement);
+                }
+            }
+        }
+        
+        petsToShow.forEach(item => {
+            let index = petsArray.findIndex(obj => obj === item);
+            if (index !== -1) {
+                petsArray.splice(index, 1);
+              }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
         petsToShow.forEach(pet => {
             const petCard = document.createElement('div');
             petCard.classList.add('pets-cards-personal');
-            petCard.dataset.id = pet.name; // Добавляем ID
+            petCard.dataset.id = pet.name; 
     
             petCard.innerHTML = `
                 <img src="${pet.img}" alt="${pet.name}'s photo" class="pets-cards-image">
@@ -194,14 +248,15 @@ window.addEventListener('resize', () => {
                 <button class="pets-cards-button">Learn more</button>
             `;
     
-            petsContainer.appendChild(petCard); // Добавляем карточку в контейнер
+            petsContainer.appendChild(petCard);
         paginationPage.innerHTML = `${currentPage}`;
 
         });
     
         PopUpFunction ();
 
-        handlePaginationButtons(currentPage); // Обновляем состояние кнопок
+       
+      handlePaginationButtons(currentPage); 
     }
 
 
@@ -245,7 +300,7 @@ function handlePaginationButtons(page) {
 
     if (currentPage < totalPages) {
         currentPage++;
-        updatePetsPage(petsArray); // Используем petsArray
+        updatePetsPage(petsArray);
     }
 });
 

@@ -1900,7 +1900,14 @@ body {
 
     .pets-cards {
         margin: 0 15px;
+        transition: transform 0.5s; 
+        transform: translateX(100%);
     }
+     
+    .pets-cards-active {
+        transform: translateX(0);
+      }
+
 
     .left-arrow-block {
         position: absolute;

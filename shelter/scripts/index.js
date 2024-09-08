@@ -122,6 +122,9 @@ document.querySelector('.cross').addEventListener('click', function() {
 
 //слайдер
 
+const track = document.querySelector('.pets-cards');
+const slides = Array.from(track.children);
+
 let petsData = []; 
 fetch('../pets.json')
   .then(response => response.json())
@@ -282,6 +285,7 @@ rightArrow.addEventListener('click', () => {
 
     let tempArr = [];
     rightArrow.addEventListener('click', () => {
+        document.querySelector('.pets-cards').classList.add('pets-cards-active');
         if (previousCardsStackRight.length > 0) {
             previousCardsStackLeft = [...currentCards];
             currentCards = [...previousCardsStackRight];
@@ -295,6 +299,7 @@ rightArrow.addEventListener('click', () => {
     });
 
     leftArrow.addEventListener('click', () => {
+        document.querySelector('.pets-cards').classList.add('pets-cards-active');
         if (previousCardsStackLeft.length === 0) {
             previousCardsStackRight = [...currentCards];
             currentCards = getNextSlide();
@@ -352,7 +357,7 @@ rightArrow.addEventListener('click', () => {
 
 
 window.addEventListener('resize', () => {
-    updateNumVisibleCards(); // Adjust number of visible cards
+    updateNumVisibleCards(); 
     currentCards = getNextSlide();
-    renderSlider(currentCards); // Re-render based on new screen size
+    renderSlider(currentCards);
   });
