@@ -96,9 +96,14 @@
     font-weight: 400;
 }
 
+.arrows {
+    display: flex;
+    justify-content: space-between;
+}
+
 .arrows img {
     display: block;
-    width: 1.5em;
+    width: 3em;
 }
 
 .player-line {
@@ -117,9 +122,15 @@
         padding-top: 1%;
         background-color: #ff0099;
         height: 5px;
-        width: 80%; 
         border-radius: 5px;
         margin-left: 2px;
+        .circle {
+            background-color: #ff0099;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            margin-left: 20px;
+        }
     }
 }
 

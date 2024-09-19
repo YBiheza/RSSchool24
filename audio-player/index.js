@@ -4,14 +4,20 @@ let songName = document.querySelector('.song-name');
 let audio = document.querySelector('.audio');
 let play = document.querySelector('.play');
 let pause = document.querySelector('.pause');
+let next = document.querySelector('.forward');
+let prev = document.querySelector('.back');
+let playerLine = document.querySelector('.player-line')
+let progress = document.querySelector('.progress')
+let cTime = document.querySelector('.currentTime')
+
 
 
 let songs = ['dontstartnow', 'beyonce'];
 let authors = ['Dua Lipa', 'Beyonce'];
-let songsNames = ["Don't start now", 'Lemonade'];
+let songsNames = ["Don't Start Now", 'Lemonade'];
 let pics = ['dontstartnow', 'lemonade'];
 
-let num = 1;
+let num = 0;
 
 function LoadSong(song) {
      songName.innerHTML = `${songsNames[num]}`
@@ -40,13 +46,89 @@ const zoom = [
 play.addEventListener('click', () => {
     if (audio.paused) {
         audio.play();
-        play.src = `./assets/svg/pause.png`; // Меняем иконку на паузу
-        cover.classList.add('playing'); // Добавляем класс playing для состояния воспроизведения
+        play.src = `./assets/svg/pause.png`; 
+        cover.classList.add('playing'); 
         cover.animate(zoom, zoomTime);
     } else {
         audio.pause();
-        play.src = `./assets/svg/play.png`; // Меняем иконку на play
-        cover.classList.remove('playing'); // Удаляем класс playing, когда на паузе
+        play.src = `./assets/svg/play.png`; 
+        cover.classList.remove('playing'); 
         cover.animate(inzoom, zoomTime);
     }
 });
+
+function Next () {
+    if (num === songs.length-1) {
+        num = 0;
+    } else {
+        num++;
+    }
+    if (!audio.paused) {
+        audio.pause();
+        play.src = `./assets/svg/play.png`; 
+        cover.classList.remove('playing'); 
+        //cover.animate(inzoom, zoomTime);
+    }
+    LoadSong(songs[num]);
+    audio.play();
+    play.src = `./assets/svg/pause.png`; 
+    cover.classList.add('playing'); 
+}
+
+next.addEventListener('click', () => {
+    Next()
+})
+
+function Prev () {
+    if (num === 0) {
+        num = songs.length-1;
+    } else {
+        num--;
+    }
+    if (!audio.paused) {
+        audio.pause();
+        play.src = `./assets/svg/play.png`;
+        cover.classList.remove('playing'); 
+        //cover.animate(inzoom, zoomTime);
+    }
+    LoadSong(songs[num]);
+    audio.play();
+    play.src = `./assets/svg/pause.png`;
+    cover.classList.add('playing');
+}
+
+prev.addEventListener('click', () => {
+    Prev()
+})
+
+let duration = 0;
+audio.addEventListener('loadedmetadata', () => {
+    duration = audio.duration; // Длительность в секундах
+    //console.log(`Длительность аудио: ${duration} секунд`);
+});
+
+let currentTime = 0;
+audio.addEventListener('timeupdate', () => {
+    currentTime = audio.currentTime; // Текущее время в секундах
+    //console.log(`Текущее время: ${currentTime} секунд`);
+    cTime.innerHTML = `${Math.floor(currentTime/1000)}:${currentTime.toFixed(0)}`
+});
+
+function Progress(e) {
+    //let duration = audio.duration;
+    //let currentTime = audio.currentTime;
+    let progressPercent = 100 * currentTime / duration
+    progress.style.width = `${progressPercent}%`
+    //console.log( progress.style.width);
+}
+
+audio.addEventListener('timeupdate', Progress)
+
+function SetProgress(e) {
+    let w = this.clientWidth
+    let x = e.offsetX
+    console.log(duration);
+    audio.currentTime = (x / w) * duration;
+}
+
+playerLine.addEventListener('click', SetProgress)
