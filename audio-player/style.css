@@ -10,3 +10,80 @@
     align-items: center;
     justify-content: center;
 }
+
+.player {
+    /*position: absolute;
+    top: 25%;
+    left: 30%;
+    right: 30%;
+    bottom: 25%;*/
+   /* max-width: 336px;
+    width: 100%;*/
+    padding: 3%;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+    flex-direction: column;
+    border: 2px #ff0099 solid;
+    border-radius: 10px;
+}
+
+.player-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 4%;
+}
+
+.arrows,
+.play-pause {
+    padding-top: 3%;
+    border-radius: 10px;
+}
+
+.play-pause img {
+    display: block;
+    width: 3em;
+}
+
+.song-info {
+    padding-top: 5%;
+}
+
+.author {
+    font-family: "Montserrat";
+    font-weight: 800;
+    color:#ff0099
+}
+
+.song-name {
+    font-family: "Montserrat";
+    font-weight: 400;
+}
+
+.arrows img {
+    display: block;
+    width: 1.5em;
+}
+
+.player-line {
+    display: flex;
+    align-items: center;
+    background-color: rgb(244, 226, 204);
+    height: 10px;
+    width: 95%;
+    margin-left: auto;
+    border-radius: 5px;
+    margin-right: auto;
+    .progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1%;
+        background-color: #ff0099;
+        height: 5px;
+        width: 80%; 
+        border-radius: 5px;
+
+    }
+}
