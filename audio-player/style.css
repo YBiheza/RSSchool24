@@ -41,9 +41,20 @@
     border-radius: 10px;
 }
 
-.play-pause img {
+/*.play-pause img {
     display: block;
     width: 3em;
+}*/
+
+.pause-active,
+.play-active {
+    display: block;
+    width: 3em;  
+}
+
+.play,
+.pause {
+    display: none;
 }
 
 .song-info {
