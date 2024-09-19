@@ -46,14 +46,20 @@
     width: 3em;
 }*/
 
-.pause-active,
-.play-active {
-    display: block;
-    width: 3em;  
+.pause-active {
+    display: block;  
 }
 
-.play,
+.play {
+    width: 3em; 
+}
+
+.play-inactive {
+    display: none;
+}
+
 .pause {
+    width: 3em;
     display: none;
 }
 

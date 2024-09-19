@@ -20,12 +20,16 @@ function LoadSong(song) {
      cover.src = `./assets/img/${pics[num]}.png`
 }
 
-LoadSong(songs[0]);
-
+LoadSong(songs[num]);
+ 
 play.addEventListener('click', () => {
-    audio.play();
-})
-
-/*pause.addEventListener('click', () => {
-    audio.pause();
-})*/
+    if (audio.paused) {
+        audio.play();
+        play.src = `./assets/svg/pause.png`; // Меняем иконку на паузу
+        //play.classList.add('playing'); // Добавляем класс playing для состояния воспроизведения
+    } else {
+        audio.pause();
+        play.src = `./assets/svg/play.png`; // Меняем иконку на play
+        //play.classList.remove('playing'); // Удаляем класс playing, когда на паузе
+    }
+});
