@@ -21,15 +21,32 @@ function LoadSong(song) {
 }
 
 LoadSong(songs[num]);
+
+const zoom = [
+    { transform: "scale(1)" },
+    { transform: "scale(1.2)" },
+  ];
+  
+  const zoomTime = {
+    duration: 2000,
+    iterations: 1,
+  };
+
+  const inzoom = [
+    { transform: "scale(1.2)" },
+    { transform: "scale(1)" },
+  ];
  
 play.addEventListener('click', () => {
     if (audio.paused) {
         audio.play();
         play.src = `./assets/svg/pause.png`; // Меняем иконку на паузу
-        //play.classList.add('playing'); // Добавляем класс playing для состояния воспроизведения
+        cover.classList.add('playing'); // Добавляем класс playing для состояния воспроизведения
+        cover.animate(zoom, zoomTime);
     } else {
         audio.pause();
         play.src = `./assets/svg/play.png`; // Меняем иконку на play
-        //play.classList.remove('playing'); // Удаляем класс playing, когда на паузе
+        cover.classList.remove('playing'); // Удаляем класс playing, когда на паузе
+        cover.animate(inzoom, zoomTime);
     }
 });
