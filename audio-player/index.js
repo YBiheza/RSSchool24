@@ -104,15 +104,25 @@ prev.addEventListener('click', () => {
 
 let duration = 0;
 audio.addEventListener('loadedmetadata', () => {
-    duration = audio.duration; // Длительность в секундах
+    duration = audio.duration; 
     //console.log(`Длительность аудио: ${duration} секунд`);
 });
 
 let currentTime = 0;
+
+
 audio.addEventListener('timeupdate', () => {
-    currentTime = audio.currentTime; // Текущее время в секундах
+    currentTime = audio.currentTime; 
+    let minutes = Math.floor(currentTime / 60); //минутс
+let seconds = Math.floor(currentTime % 60); //секундс
+
+
+seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+
+cTime.innerHTML = `${minutes}:${seconds}`;
     //console.log(`Текущее время: ${currentTime} секунд`);
-    cTime.innerHTML = `${Math.floor(currentTime/1000)}:${currentTime.toFixed(0)}`
+    //cTime.innerHTML = `${(currentTime/1000)/60}:${currentTime.toFixed(0)}`
 });
 
 function Progress(e) {
