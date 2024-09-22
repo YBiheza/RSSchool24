@@ -106,10 +106,10 @@ let duration = 0;
 audio.addEventListener('loadedmetadata', () => {
     duration = audio.duration; 
     //console.log(`Длительность аудио: ${duration} секунд`);
+    document.querySelector('.duration').innerHTML = `${Math.floor(duration / 60)}:${Math.floor(duration % 60)}`;
 });
 
 let currentTime = 0;
-
 
 audio.addEventListener('timeupdate', () => {
     currentTime = audio.currentTime; 
@@ -138,7 +138,7 @@ audio.addEventListener('timeupdate', Progress)
 function SetProgress(e) {
     let w = this.clientWidth
     let x = e.offsetX
-    console.log(duration);
+    //console.log(duration);
     audio.currentTime = (x / w) * duration;
 }
 
