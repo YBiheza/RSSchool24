@@ -159,7 +159,6 @@
         border-radius: 5px;
         margin-left: 2px;
         transition: 0.2s;
-
         .circle {
             background-color: #ff0099;
             width: 8px;
@@ -173,6 +172,10 @@
 .player-line:hover {
     transform: scale(1.1);
 }
+
+/*.progress:hover {
+    transform: scale(1.1);
+}*/
 
 /*@keyframes zoom {
     0% {
