@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <header>
+
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="player">
+                <div class="cover">
+                    <img src="./assets/img/dontstartnow.png" alt ="album cover" class = "album-cover">
+                </div>
+                <audio src="./assets/audio/dontstartnow.mp3" class="audio"></audio>
+                <div class="player-block">
+                    <div class="play-pause">
+                        <img src="./assets/svg/play.png" alt="play button" class="play">
+                        <img src = "./assets/svg/pause.png" alt="pause button" class="pause">
+                    </div>
+                    <div class = "song-info">
+                        <p class = "author">Dua Lipa</p>
+                        <p class = "song-name">Don't Start Now</p>
+                    </div>
+                    <div class = "arrows">
+                        <img src="./assets/svg/backward.png" class="back" alt="back arrow">
+                        <img src="./assets/svg/forward.png" alt="forward arrow" class="forward">
+                    </div>
+                </div>
+                <div class="timing">
+                    <p class="currentTime">0:00</p>
+                    <p class="duration">rrrar</p>
+                </div>
+                <div class="player-line">
+                    <div class="progress">
+                        <!--<div class="circle"></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="logo">
+            <a href="https://rs.school/courses/javascript-preschool-ru" class="link-rs">
+                <img src="./assets/svg/rss-logo.svg" alt="rs school logo" class="logo-rs">
+            </a>
+            <a href="https://github.com/YBiheza" class="link-gh">
+                <img src="./assets/svg/github-logo.png" alt="gitnub logo" class="logo-gh">
+            </a>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>
