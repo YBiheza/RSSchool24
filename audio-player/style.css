@@ -4,11 +4,21 @@
     box-sizing: border-box;
 }
 
+.body {
+    background-image: url(./assets/img/dontstartnow.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
 .wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 7% 0;
+    backdrop-filter: blur(10px);
 }
 
 .player {
@@ -26,10 +36,15 @@
     flex-direction: column;
     border: 2px #ff0099 solid;
     border-radius: 10px;
+    background-color: #ffffff;
 }
 
 .cover {
     overflow: hidden;
+}
+
+.album-cover {
+    max-width: 334px;
 }
 
 /*.album-cover {
@@ -57,6 +72,7 @@
 .play-pause {
     padding-top: 3%;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /*.play-pause img {
@@ -69,7 +85,12 @@
 }
 
 .play {
-    width: 3em; 
+    width: 3.5em; 
+    transition: 0.3s;
+}
+
+.play:hover {
+    transform:scale(1.2);
 }
 
 .play-inactive {
@@ -99,11 +120,22 @@
 .arrows {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    gap: 10px;
 }
 
 .arrows img {
     display: block;
     width: 3em;
+    transition: 0.3s;
+}
+
+.back:hover {
+    transform:scale(1.2);
+}
+
+.forward:hover {
+    transform:scale(1.2);
 }
 
 .player-line {

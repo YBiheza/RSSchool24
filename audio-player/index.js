@@ -9,6 +9,7 @@ let prev = document.querySelector('.back');
 let playerLine = document.querySelector('.player-line')
 let progress = document.querySelector('.progress')
 let cTime = document.querySelector('.currentTime')
+let body = document.querySelector('.body')
 
 
 
@@ -24,7 +25,7 @@ function LoadSong(song) {
      author.innerHTML = `${authors[num]}`
      audio.src = `./assets/audio/${song}.mp3`
      cover.src = `./assets/img/${pics[num]}.png`
-}
+     body.style.backgroundImage = `url('./assets/img/${pics[num]}.png')`;}
 
 LoadSong(songs[num]);
 
