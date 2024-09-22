@@ -216,6 +216,13 @@ a {
     text-decoration: none;
 }
 
+.currentTime,
+.duration {
+    font-family: "Montserrat";
+    font-weight: 200;
+    color: #959595
+}
+
 /*.progress:hover {
     transform: scale(1.1);
 }*/
