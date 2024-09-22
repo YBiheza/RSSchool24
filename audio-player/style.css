@@ -121,12 +121,12 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    gap: 10px;
+    gap: 7px;
 }
 
 .arrows img {
     display: block;
-    width: 3em;
+    width: 3.5em;
     transition: 0.3s;
 }
 
