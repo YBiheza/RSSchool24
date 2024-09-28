@@ -35,12 +35,12 @@ function ShowData(image) {
     galleryWrapper.append(imageDiv);
 }
     
-    button.addEventListener('click', () => {
-        const query = str.value.trim(); // Получаем значение из input
-        if (query) {
-            fetchHandler(query); // Выполняем запрос с пользовательским вводом
-        } else {
-            console.log('Please enter a search term');
-            galleryWrapper.innerHTML = '<p>Please enter a search term</p>'; // Сообщение, если ввод пуст
-        }
-    });
+button.addEventListener('click', () => {
+    const query = str.value.trim(); // Получаем значение из input
+    if (query) {
+        fetchHandler(query); // Выполняем запрос с пользовательским вводом
+    } else {
+        console.log('Please enter a search term');
+        galleryWrapper.innerHTML = '<p>Please enter a search term</p>'; // Сообщение, если ввод пуст
+    }
+});

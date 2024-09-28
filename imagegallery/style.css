@@ -32,10 +32,8 @@
 }
 
 .image-block {
-    /*display: flex;*/
     padding: 1% 2%;
     width: 32%;
-    /*height: auto;*/
     border-radius: 10px; 
 }
 
