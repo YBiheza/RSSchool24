@@ -1,21 +1,27 @@
 let str = document.querySelector('input');
 let galleryWrapper = document.querySelector('.gallery');
-let images = document.querySelector('.image')
 const button = document.querySelector('h1');
 const url = `https://api.unsplash.com/search/photos?query=${str}&per_page=9&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`
 
 
-/*async function fetchHandler () {
+async function fetchHandler () {
     try {
         const response = await fetch(url);
         const data = await response.json();  
-        //console.log(response);
+        
+        if (data.results.length > 0) {
+            galleryWrapper.innerHTML = ''; // Очистить галерею перед новым запросом
+            data.results.forEach(image => ShowData(image)); // Отобразить каждое изображение
+        } else {
+            console.log('No images found');
+            galleryWrapper.innerHTML = '<p>No images found</p>'; // Показать сообщение, если ничего не найдено
+        }
 
         images.src = data.file;
     } catch (error) {
         console.log('error:(');
     }
-}*/
+}
 
 function ShowData (data) {
     const img = document.createElement("img");
@@ -24,23 +30,6 @@ function ShowData (data) {
     img.alt = `image`;
     galleryWrapper.append(img);
 }
-
-async function fetchHandler() {
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-
-        /*if (data.results.length > 0) {
-            galleryWrapper.innerHTML = ''; // Очистить галерею перед новым запросом
-            data.results.forEach(image => ShowData(image)); // Отобразить каждое изображение
-        } else {
-            console.log('No images found');
-            galleryWrapper.innerHTML = '<p>No images found</p>'; // Показать сообщение, если ничего не найдено
-        }*/
-    } catch (error) {
-        console.log('Error:(', error);
-    }
-  }
     
     function ShowData(image) {
         // Создаем новый div для изображения
