@@ -10,11 +10,11 @@ async function fetchHandler () {
         const data = await response.json();  
         
         if (data.results.length > 0) {
-            galleryWrapper.innerHTML = ''; // Очистить галерею перед новым запросом
-            data.results.forEach(image => ShowData(image)); // Отобразить каждое изображение
+            galleryWrapper.innerHTML = '';
+            data.results.forEach(image => ShowData(image));
         } else {
             console.log('No images found');
-            galleryWrapper.innerHTML = '<p>No images found</p>'; // Показать сообщение, если ничего не найдено
+            galleryWrapper.innerHTML = '<p>No images found</p>';
         }
 
         images.src = data.file;
@@ -22,32 +22,18 @@ async function fetchHandler () {
         console.log('error:(');
     }
 }
+    
+function ShowData(image) {
+    const imageDiv = document.createElement("div");
+    imageDiv.classList.add("image-block");
 
-function ShowData (data) {
     const img = document.createElement("img");
-    img.classList.add("gallery-img");
-    img.src = data.urls.regular[0];
-    img.alt = `image`;
-    galleryWrapper.append(img);
+    img.classList.add("image");
+    img.src = image.urls.regular;
+    img.alt = image.alt_description || 'image';
+    imageDiv.appendChild(img);
+    galleryWrapper.append(imageDiv);
 }
-    
-    function ShowData(image) {
-        // Создаем новый div для изображения
-        const imageDiv = document.createElement("div");
-        imageDiv.classList.add("image-block"); // Добавляем класс для оформления (можно стилизовать через CSS)
-    
-        // Создаем img элемент
-        const img = document.createElement("img");
-        img.classList.add("image");
-        img.src = image.urls.regular; // Используем URL изображения из данных
-        img.alt = image.alt_description || 'image'; // Добавляем описание, если есть
-    
-        // Добавляем img в созданный div
-        imageDiv.appendChild(img);
-    
-        // Добавляем div с изображением в контейнер галереи
-        galleryWrapper.append(imageDiv);
-    }
     
     button.addEventListener('click', () => {
         const query = str.value.trim(); // Получаем значение из input
