@@ -1,10 +1,11 @@
 let str = document.querySelector('input');
 let galleryWrapper = document.querySelector('.gallery');
 const button = document.querySelector('h1');
-const url = `https://api.unsplash.com/search/photos?query=${str}&per_page=9&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`
 
 
-async function fetchHandler () {
+async function fetchHandler (str) {
+    const url = `https://api.unsplash.com/search/photos?query=${str}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`
+
     try {
         const response = await fetch(url);
         const data = await response.json();  
@@ -17,9 +18,8 @@ async function fetchHandler () {
             galleryWrapper.innerHTML = '<p>No images found</p>';
         }
 
-        images.src = data.file;
     } catch (error) {
-        console.log('error:(');
+        console.log('error:(', error);
     }
 }
     
@@ -36,6 +36,7 @@ function ShowData(image) {
 }
     
 button.addEventListener('click', () => {
+    galleryWrapper.innerHTML = '';
     const query = str.value.trim(); // Получаем значение из input
     if (query) {
         fetchHandler(query); // Выполняем запрос с пользовательским вводом
