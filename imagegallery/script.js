@@ -1,7 +1,9 @@
 let str = document.querySelector('input');
-console.log(str.value);
+let galleryWrapper = document.querySelector('.gallery');
 let images = document.querySelector('.image')
 const button = document.querySelector('h1');
+const url = `https://api.unsplash.com/search/photos?query=${str}&per_page=9&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`
+
 
 /*async function fetchHandler () {
     try {
@@ -15,17 +17,55 @@ const button = document.querySelector('h1');
     }
 }*/
 
+function ShowData (data) {
+    const img = document.createElement("img");
+    img.classList.add("gallery-img");
+    img.src = data.urls.regular[0];
+    img.alt = `image`;
+    galleryWrapper.append(img);
+}
+
 async function fetchHandler() {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data);
+
+        /*if (data.results.length > 0) {
+            galleryWrapper.innerHTML = ''; // Очистить галерею перед новым запросом
+            data.results.forEach(image => ShowData(image)); // Отобразить каждое изображение
+        } else {
+            console.log('No images found');
+            galleryWrapper.innerHTML = '<p>No images found</p>'; // Показать сообщение, если ничего не найдено
+        }*/
     } catch (error) {
-        console.log('error:(');
+        console.log('Error:(', error);
     }
   }
-  getData();
-
-button.addEventListener('click', () => {
-    console.log(str.value);
-} )
+    
+    function ShowData(image) {
+        // Создаем новый div для изображения
+        const imageDiv = document.createElement("div");
+        imageDiv.classList.add("image-block"); // Добавляем класс для оформления (можно стилизовать через CSS)
+    
+        // Создаем img элемент
+        const img = document.createElement("img");
+        img.classList.add("image");
+        img.src = image.urls.regular; // Используем URL изображения из данных
+        img.alt = image.alt_description || 'image'; // Добавляем описание, если есть
+    
+        // Добавляем img в созданный div
+        imageDiv.appendChild(img);
+    
+        // Добавляем div с изображением в контейнер галереи
+        galleryWrapper.append(imageDiv);
+    }
+    
+    button.addEventListener('click', () => {
+        const query = str.value.trim(); // Получаем значение из input
+        if (query) {
+            fetchHandler(query); // Выполняем запрос с пользовательским вводом
+        } else {
+            console.log('Please enter a search term');
+            galleryWrapper.innerHTML = '<p>Please enter a search term</p>'; // Сообщение, если ввод пуст
+        }
+    });
