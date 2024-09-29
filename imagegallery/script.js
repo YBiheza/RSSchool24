@@ -3,6 +3,8 @@ let galleryWrapper = document.querySelector('.gallery');
 const button = document.querySelector('.search-icon');
 
 
+fetchHandler('peach');
+
 async function fetchHandler (str) {
     const url = `https://api.unsplash.com/search/photos?query=${str}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`
 
