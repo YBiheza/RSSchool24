@@ -46,6 +46,19 @@ button.addEventListener('click', () => {
     }
 });
 
+str.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        galleryWrapper.innerHTML = '';
+        const query = str.value.trim();
+        if (query) {
+            fetchHandler(query);
+        } else {
+            console.log('Please enter a search term');
+            galleryWrapper.innerHTML = '<p>Please enter a search term</p>';
+        }
+    }
+  });
+
 
 /*let str = document.querySelector('input'); // Input field
 let galleryWrapper = document.querySelector('.gallery'); // Gallery container

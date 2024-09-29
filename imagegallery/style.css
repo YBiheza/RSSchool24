@@ -37,14 +37,13 @@
 }
 
 .search-icon {
-    top: 38px;
-    right: 85px;
     width: 31px;
-    z-index: 7;
+    transition: 0.3s;
 }
 
 .search-icon:hover {
     cursor:pointer;
+    transform: scale(1.2);
 }
 
 #input {
