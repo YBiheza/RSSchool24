@@ -36,6 +36,17 @@
     align-items: center;
 }
 
+.search-icon {
+    top: 38px;
+    right: 85px;
+    width: 31px;
+    z-index: 7;
+}
+
+.search-icon:hover {
+    cursor:pointer;
+}
+
 #input {
     border-radius: 10px;
     border-color: blueviolet;
@@ -44,10 +55,13 @@
 
 .main {
     background-color: rgb(237, 218, 255);
+    height: auto;
 }
 
 .gallery-wrapper {
     display: flex;
+    background-color: rgb(237, 218, 255);
+
 }
 
 .gallery {
