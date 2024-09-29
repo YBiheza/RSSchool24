@@ -3,8 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+
+}
+
 .header {
     background-color: rgb(230, 202, 255);
+    min-width: 100%;
 }
 
 .container {
@@ -83,4 +97,33 @@
     width: 100%;
     width: 330px;
     height: 230px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    gap: 20px;
+    background-color: rgb(230, 202, 255);
+    min-width: 100%;
+}
+.rs-logo {
+    width: 5%;
+}
+.rs-logo-image {
+}
+.gh-logo {
+    width: 5%;
+}
+.gh-logo-image {
+    width: 100%;
+}
+.year {
+    display: block;
+    width: 10%;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 200;
+    color: rgb(92, 6, 173);
 }
