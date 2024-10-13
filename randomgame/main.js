@@ -9,7 +9,10 @@ let num  = 18;
 
 let currentCards = [];
 
-//bttn.addEventListener('click', StartGame);
+bttn.addEventListener('click', StartGame);
+
+let hearts = Array.from(document.querySelectorAll('.heart'));
+console.log(hearts.length);
 
 function StartGame() {
     field.innerHTML = '';
@@ -87,17 +90,35 @@ function CardClick (card) {
 
 }
 
+let i = 9;
 function Logic () {
-    console.log(currentCards);
-    if (currentCards.length == 2 && currentCards[0].textContent!==currentCards[1].textContent) {
-        currentCards[0].classList.remove('visible');
-        currentCards[1].classList.remove('visible');
-        currentCards.length = 0;
+    console.log(currentCards, hearts);
+    if (currentCards.length % 2 === 0 && currentCards[currentCards.length - 1].textContent!==currentCards[currentCards.length - 2].textContent) {
+        currentCards[currentCards.length - 1].classList.remove('visible');
+        currentCards[currentCards.length - 2].classList.remove('visible');
+        //currentCards.length = 0;
+        hearts[i].style['display'] = 'none';
+        i--;
+        // hearts.length = hearts.length - 1;
+        hearts.pop();
+        currentCards.pop();
+        currentCards.pop();
+        console.log(hearts.length);
     } else {
-        if (currentCards.length == 2 && currentCards[0].textContent == currentCards[1].textContent) {
-            currentCards.length = 0;
+        if (currentCards.length % 2 == 0 && currentCards[currentCards.length - 1].textContent == currentCards[currentCards.length - 2].textContent) {
+           // currentCards.length = 0;
         }
     }
 }
 
 StartGame();
+
+let timer = document.querySelector('.timer');
+let seconds = 0; // Начальное значение
+
+setInterval(function() {
+    seconds++; // Увеличиваем счетчик секунд
+    let minutes = Math.floor(seconds / 60); // Переводим секунды в минуты
+    let remainingSeconds = seconds % 60; // Остаток секунд для отображения
+    timer.innerHTML = `${minutes}:${remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds}`;
+}, 1000);

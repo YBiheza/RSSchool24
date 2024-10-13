@@ -3,26 +3,68 @@
     padding: 0;
     box-sizing: border-box;
 }
-.gamefield {
-    display: flex;
 
+.body {
+    background: url(./18262ab27318292543f1f8ef518d170c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    font-family: "Kalnia Glaze", serif;
+    font-size: 46px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rules {
+    font-family: "Kalnia Glaze", serif;
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.heart {
+    width: 5%;
+    height: auto;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamefield {
+    margin: 40px auto;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .newgame {
-    width: 20%;
+    width: 15%;
     border-radius: 100px;
-    background-color:blueviolet;
-    padding: 15px;
+    background-color:rgb(143, 87, 255);
+    padding: 5px 10px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .newgame:hover {
-
+    background-color:rgb(180, 147, 245);
+    transform: scale(1.2);
 }
 
 .card {
-    width: 40px;
-    height: 40px;
+    width: 20%;
+    aspect-ratio: 1 / 1;
     perspective: 50em;
     cursor: pointer;
     display: flex;
@@ -39,7 +81,17 @@
     flex-direction: column;
 }
 
-.card-front,
+.card-front{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/736x/e3/60/39/e36039c9d9211f7bd9d04cdb9c23a1a3.jpg);
+}
+
 .card-back {
     width: 100%;
     height: 100%;
@@ -48,7 +100,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
+    background: url(./18262ab27318292543f1f8ef518d170c.jpg);
 }
 
 .card.visible .card-inner {
@@ -57,4 +109,11 @@
 
 .card-back {
     transform: rotateY(180deg);
+}
+
+.popup {
+    background: url(./53323057eaf5f2ca42c3410107dcb1fe.jpg);
+    display: block;
+    width: 80%;
+    height: 50px;
 }
