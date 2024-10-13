@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background: url(./18262ab27318292543f1f8ef518d170c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    font-family: "Kalnia Glaze", serif;
+    font-size: 46px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rules {
+    font-family: "Kalnia Glaze", serif;
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.heart {
+    width: 5%;
+    height: auto;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamefield {
+    margin: 40px auto;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.newgame {
+    width: 15%;
+    border-radius: 100px;
+    background-color:rgb(143, 87, 255);
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newgame:hover {
+    background-color:rgb(180, 147, 245);
+    transform: scale(1.2);
+}
+
+.card {
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    perspective: 50em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-front{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/736x/e3/60/39/e36039c9d9211f7bd9d04cdb9c23a1a3.jpg);
+}
+
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./18262ab27318292543f1f8ef518d170c.jpg);
+}
+
+.card.visible .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.popup {
+    background: #ffffff;
+    display: none;
+    width: 40%;
+    height: 200px;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+}
+
+.popup-active {
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+    display: none;
+    z-index: 3;
+    transition: 0.3s;
+}
+
+.overlay.active {
+    display: block;
+}
