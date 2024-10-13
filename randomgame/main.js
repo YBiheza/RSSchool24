@@ -9,10 +9,15 @@ let num  = 18;
 
 let currentCards = [];
 
+let chosen = [];
+
 bttn.addEventListener('click', StartGame);
 
 let hearts = Array.from(document.querySelectorAll('.heart'));
 console.log(hearts.length);
+
+let timer = document.querySelector('.timer');
+let seconds = 0; // Начальное значение
 
 function StartGame() {
     field.innerHTML = '';
@@ -26,7 +31,7 @@ function StartGame() {
         cardsArr.forEach((card) => card.classList.remove('visible'))
     }, 3000);
     //cardsArr.forEach((card) => card.classList.remove('visible'))
-
+    seconds = 0;
 };
 
 function RandomCards (arr, num) {
@@ -75,7 +80,7 @@ function CreateCard (icon) {
 
     card.addEventListener('click', () => {
         CardClick(card);
-    });
+    });    
 
     field.appendChild(card);
     
@@ -84,10 +89,22 @@ function CreateCard (icon) {
 function CardClick (card) {
     card.classList.add('visible');
     currentCards.push(card);
+    chosen.push(card);
+
+    const cardsArr = document.querySelectorAll('.card')
+    cardsArr.forEach((card) => {
+        if (chosen.length >= 2) {
+            card.style.pointerEvents = 'none'; // Отключает клики
+            card.style.opacity = '0.5';
+        }
+    });
+
     setTimeout(() => {
         Logic();
-      }, 3000)
-
+        cardsArr.forEach((card) => {
+            card.style.pointerEvents = 'auto'; // Отключает клики
+            card.style.opacity = '1';
+    })}, 1500)
 }
 
 let i = 9;
@@ -107,14 +124,18 @@ function Logic () {
     } else {
         if (currentCards.length % 2 == 0 && currentCards[currentCards.length - 1].textContent == currentCards[currentCards.length - 2].textContent) {
            // currentCards.length = 0;
+        } else {
+            if (currentCards.length % 2 !== 0) {
+                currentCards.forEach = ((card) => {
+                    card.classList.remove('visible');
+                });
+            }
         }
     }
+    chosen = [];
 }
 
 StartGame();
-
-let timer = document.querySelector('.timer');
-let seconds = 0; // Начальное значение
 
 setInterval(function() {
     seconds++; // Увеличиваем счетчик секунд
