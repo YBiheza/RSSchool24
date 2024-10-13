@@ -30,6 +30,7 @@
 .heart {
     width: 5%;
     height: auto;
+    margin: 20px auto;
 }
 .main {
     display: flex;
@@ -39,7 +40,7 @@
 }
 
 .gamefield {
-    margin: 40px auto;
+    margin: 0 auto 40px auto;
     width: 40%;
     display: flex;
     justify-content: center;
@@ -49,16 +50,21 @@
 }
 
 .newgame {
-    width: 15%;
+    width: 30%;
     border-radius: 100px;
-    background-color:rgb(143, 87, 255);
+    background-color:rgb(255, 255, 255);
     padding: 5px 10px;
     cursor: pointer;
     transition: 0.3s;
+    border: #360c6c 2px solid;
+    font-family: "Kalnia Glaze", serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
 }
 
 .newgame:hover {
-    background-color:rgb(180, 147, 245);
+    background-color:rgb(17, 0, 50);
     transform: scale(1.2);
 }
 
@@ -115,14 +121,18 @@
     background: #ffffff;
     display: none;
     width: 40%;
-    height: 200px;
-    position: absolute;
+    height: 230px;
+    position: fixed;
     top: 35%;
     left: 30%;
+    z-index: 7;
 }
 
 .popup-active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .overlay {
@@ -137,6 +147,20 @@
     transition: 0.3s;
 }
 
-.overlay.active {
+.overlay-active {
     display: block;
+}
+
+.result-text {
+    font-family: "Kalnia Glaze", serif;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.result-img {
+    display: flex;
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
 }

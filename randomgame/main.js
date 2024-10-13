@@ -1,6 +1,7 @@
 let field = document.querySelector('.gamefield');
-let popup = document.querySelector('popup');
+let popup = document.querySelector('.popup');
 let bttn = document.querySelector('.newgame');
+let popupText = document.querySelector('.result-text')
 
 
 const cardsIcons = ['🐒','🦊','🦝','🦁','🐯','🦄','🐽','🐫','🐭'];
@@ -94,7 +95,7 @@ function CardClick (card) {
     const cardsArr = document.querySelectorAll('.card')
     cardsArr.forEach((card) => {
         if (chosen.length >= 2) {
-            card.style.pointerEvents = 'none'; // Отключает клики
+            card.style.pointerEvents = 'none';
             card.style.opacity = '0.5';
         }
     });
@@ -102,12 +103,12 @@ function CardClick (card) {
     setTimeout(() => {
         Logic();
         cardsArr.forEach((card) => {
-            card.style.pointerEvents = 'auto'; // Отключает клики
+            card.style.pointerEvents = 'auto'; 
             card.style.opacity = '1';
     })}, 1500)
 }
 
-let i = 9;
+let i = 1;
 function Logic () {
     console.log(currentCards, hearts);
     if (currentCards.length % 2 === 0 && currentCards[currentCards.length - 1].textContent!==currentCards[currentCards.length - 2].textContent) {
@@ -121,6 +122,15 @@ function Logic () {
         currentCards.pop();
         currentCards.pop();
         console.log(hearts.length);
+
+        if (hearts.length === 0 && currentCards.length !== num) {
+            popup.classList.add('popup-active');
+            over.classList.add('overlay-active');
+            document.body.style.overflow = 'hidden';
+            popupText.innerHTML = 'You lose'
+            //popup.innerHTML
+        }
+
     } else {
         if (currentCards.length % 2 == 0 && currentCards[currentCards.length - 1].textContent == currentCards[currentCards.length - 2].textContent) {
            // currentCards.length = 0;
@@ -133,19 +143,9 @@ function Logic () {
         }
     }
     chosen = [];
-
-    if (hearts.length === 0) {
-        ShowPopup();
-    }
 }
 
 let over = document.querySelector('.overlay');
-
-function ShowPopup() {
-    popup.classList.add('active');
-    over.classList.add('active');
-
-}
 
 
 
