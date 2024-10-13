@@ -1,6 +1,7 @@
 let field = document.querySelector('.gamefield');
 let popup = document.querySelector('.popup');
 let bttn = document.querySelector('.newgame');
+let restartButton = document.querySelector('.restart')
 let popupText = document.querySelector('.result-text')
 
 
@@ -14,7 +15,7 @@ let chosen = [];
 
 bttn.addEventListener('click', StartGame);
 
-let hearts = Array.from(document.querySelectorAll('.heart'));
+let hearts = [];
 console.log(hearts.length);
 
 let timer = document.querySelector('.timer');
@@ -33,6 +34,7 @@ function StartGame() {
     }, 3000);
     //cardsArr.forEach((card) => card.classList.remove('visible'))
     seconds = 0;
+    hearts = Array.from(document.querySelectorAll('.heart'));
 };
 
 function RandomCards (arr, num) {
@@ -94,7 +96,7 @@ function CardClick (card) {
 
     const cardsArr = document.querySelectorAll('.card')
     cardsArr.forEach((card) => {
-        if (chosen.length >= 2) {
+        if (chosen.length == 2) {
             card.style.pointerEvents = 'none';
             card.style.opacity = '0.5';
         }
@@ -105,12 +107,13 @@ function CardClick (card) {
         cardsArr.forEach((card) => {
             card.style.pointerEvents = 'auto'; 
             card.style.opacity = '1';
+            chosen = [];
+
     })}, 1500)
 }
 
 let i = 1;
 function Logic () {
-    console.log(currentCards, hearts);
     if (currentCards.length % 2 === 0 && currentCards[currentCards.length - 1].textContent!==currentCards[currentCards.length - 2].textContent) {
         currentCards[currentCards.length - 1].classList.remove('visible');
         currentCards[currentCards.length - 2].classList.remove('visible');
@@ -128,7 +131,16 @@ function Logic () {
             over.classList.add('overlay-active');
             document.body.style.overflow = 'hidden';
             popupText.innerHTML = 'You lose'
-            //popup.innerHTML
+            popup.querySelector('.result-img').src = './711d0b423b26d79f63ad389556c21133 (1).png';
+        } else {
+            if (currentCards.length === num && hearts.length >= 0) {
+                popup.classList.add('popup-active');
+                over.classList.add('overlay-active');
+                document.body.style.overflow = 'hidden';
+                popupText.innerHTML = 'You win!'
+                popup.querySelector('.result-img').src = './kisspng-portable-network-graphics-transparency-clip-art-pi-pixilart-minecraft-heart-by-anonymous-5c9083ba569300.7448202615529747783546 (1).png';
+
+            }
         }
 
     } else {
@@ -142,7 +154,7 @@ function Logic () {
             }
         }
     }
-    chosen = [];
+    //chosen = [];
 }
 
 let over = document.querySelector('.overlay');
@@ -158,3 +170,27 @@ setInterval(function() {
     let remainingSeconds = seconds % 60; // Остаток секунд для отображения
     timer.innerHTML = `${minutes}:${remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds}`;
 }, 1000);
+
+bttn.addEventListener('click', () => {
+    StartGame();
+    popup.classList.remove('popup-active');
+    over.classList.remove('overlay-active');
+    document.body.style.overflow = 'visible';
+    hearts = Array.from(document.querySelectorAll('.heart'));
+    hearts.forEach((heart) => {
+        heart.style['display'] = 'flex';
+    })
+    i = 1;
+    currentCards = [];
+})
+
+restartButton.addEventListener('click', () => {
+    StartGame();
+    hearts = [];
+    i = 1;
+    currentCards = [];
+    hearts = Array.from(document.querySelectorAll('.heart'));
+    hearts.forEach((heart) => {
+        heart.style['display'] = 'flex';
+    })
+})
