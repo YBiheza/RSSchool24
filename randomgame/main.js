@@ -126,22 +126,10 @@ function Logic () {
         currentCards.pop();
         console.log(hearts.length);
 
-        if (hearts.length === 0 && currentCards.length !== num) {
-            popup.classList.add('popup-active');
-            over.classList.add('overlay-active');
-            document.body.style.overflow = 'hidden';
-            popupText.innerHTML = 'You lose'
-            popup.querySelector('.result-img').src = './711d0b423b26d79f63ad389556c21133 (1).png';
-        } else {
-            if (currentCards.length === num && hearts.length >= 0) {
-                popup.classList.add('popup-active');
-                over.classList.add('overlay-active');
-                document.body.style.overflow = 'hidden';
-                popupText.innerHTML = 'You win!'
-                popup.querySelector('.result-img').src = './kisspng-portable-network-graphics-transparency-clip-art-pi-pixilart-minecraft-heart-by-anonymous-5c9083ba569300.7448202615529747783546 (1).png';
 
-            }
-        }
+
+
+
 
     } else {
         if (currentCards.length % 2 == 0 && currentCards[currentCards.length - 1].textContent == currentCards[currentCards.length - 2].textContent) {
@@ -152,6 +140,22 @@ function Logic () {
                     card.classList.remove('visible');
                 });
             }
+        }
+    }
+    if (hearts.length === 0 && currentCards.length !== num) {
+        popup.classList.add('popup-active');
+        over.classList.add('overlay-active');
+        document.body.style.overflow = 'hidden';
+        popupText.innerHTML = 'You lose'
+        popup.querySelector('.result-img').src = './711d0b423b26d79f63ad389556c21133 (1).png';
+    } else {
+        if (currentCards.length === num && hearts.length >= 0) {
+            popup.classList.add('popup-active');
+            over.classList.add('overlay-active');
+            document.body.style.overflow = 'hidden';
+            popupText.innerHTML = 'You win!'
+            popup.querySelector('.result-img').src = './kisspng-portable-network-graphics-transparency-clip-art-pi-pixilart-minecraft-heart-by-anonymous-5c9083ba569300.7448202615529747783546 (1).png';
+
         }
     }
     //chosen = [];
