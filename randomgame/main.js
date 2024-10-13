@@ -16,10 +16,10 @@ let chosen = [];
 bttn.addEventListener('click', StartGame);
 
 let hearts = [];
-console.log(hearts.length);
+//console.log(hearts.length);
 
 let timer = document.querySelector('.timer');
-let seconds = 0; // Начальное значение
+let seconds = 0;
 
 function StartGame() {
     field.innerHTML = '';
@@ -56,7 +56,7 @@ function RandomCards (arr, num) {
     }
 
 
-console.log(randomArray);
+//console.log(randomArray);
 return randomArray;
 }
 
@@ -112,7 +112,7 @@ function CardClick (card) {
     })}, 1500)
 }
 
-let i = 1;
+let i = 9;
 function Logic () {
     if (currentCards.length % 2 === 0 && currentCards[currentCards.length - 1].textContent!==currentCards[currentCards.length - 2].textContent) {
         currentCards[currentCards.length - 1].classList.remove('visible');
@@ -186,14 +186,14 @@ bttn.addEventListener('click', () => {
     hearts.forEach((heart) => {
         heart.style['display'] = 'flex';
     })
-    i = 1;
+    i = 9;
     currentCards = [];
 })
 
 restartButton.addEventListener('click', () => {
     StartGame();
     hearts = [];
-    i = 1;
+    i = 9;
     currentCards = [];
     hearts = Array.from(document.querySelectorAll('.heart'));
     hearts.forEach((heart) => {
