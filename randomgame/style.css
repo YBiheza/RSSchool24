@@ -112,8 +112,31 @@
 }
 
 .popup {
-    background: url(./53323057eaf5f2ca42c3410107dcb1fe.jpg);
+    background: #ffffff;
+    display: none;
+    width: 40%;
+    height: 200px;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+}
+
+.popup-active {
     display: block;
-    width: 80%;
-    height: 50px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+    display: none;
+    z-index: 3;
+    transition: 0.3s;
+}
+
+.overlay.active {
+    display: block;
 }

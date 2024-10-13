@@ -133,7 +133,22 @@ function Logic () {
         }
     }
     chosen = [];
+
+    if (hearts.length === 0) {
+        ShowPopup();
+    }
 }
+
+let over = document.querySelector('.overlay');
+
+function ShowPopup() {
+    popup.classList.add('active');
+    over.classList.add('active');
+
+}
+
+
+
 
 StartGame();
 
