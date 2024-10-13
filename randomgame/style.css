@@ -8,6 +8,9 @@
     background: url(./18262ab27318292543f1f8ef518d170c.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .header {
@@ -56,7 +59,7 @@
 }
 
 .timer {
-    margin-top: 20px;
+    margin: 20px auto;
     width: 15%;
     border-radius: 100px;
     background-color:rgb(198, 156, 254);
@@ -184,4 +187,52 @@
     width: 30%;
     height: auto;
     margin: 0 auto;
+}
+
+.footer {
+    flex-direction: row;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100vw;
+    background-color: #c3c3c38e;
+    height: 50px;
+    z-index: 2;
+    bottom: 0;
+}
+
+.logo {
+    display:flex;
+    gap: 5px;
+}
+
+.logo-rs {
+    width: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo-gh {
+    width: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo-gh:hover,
+.logo-rs:hover {
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+}
+
+.year {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kalnia Glaze", serif;
+    font-size: 16px;
+    font-weight: 500;
 }

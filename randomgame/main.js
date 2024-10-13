@@ -148,6 +148,8 @@ function Logic () {
         document.body.style.overflow = 'hidden';
         popupText.innerHTML = 'You lose'
         popup.querySelector('.result-img').src = './711d0b423b26d79f63ad389556c21133 (1).png';
+        popup.querySelector('.game-time');
+        popupTime.innerHTML = `${Math.floor(seconds / 60)}:${seconds % 60 < 10 ? '0' + seconds % 60 : seconds % 60}`;
     } else {
         if (currentCards.length === num && hearts.length >= 0) {
             popup.classList.add('popup-active');
