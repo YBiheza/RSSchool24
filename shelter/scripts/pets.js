@@ -77,7 +77,7 @@ function showPopup(animal) {
 
 
     const popup = document.querySelector('.pets-cards-popup');
-    popup.querySelector('.popup-image').src = animal.img;
+    popup.querySelector('.popup-image').src = `./assets/images/${animal.name}.png`;
     popup.querySelector('.popup-name').textContent = animal.name;
     popup.querySelector('.popup-breed').innerHTML = kindabreed;
     popup.querySelector('.popup-description').innerHTML = animal.description;
@@ -190,7 +190,7 @@ window.addEventListener('resize', () => {
             petCard.dataset.id = pet.name; 
     
             petCard.innerHTML = `
-                <img src="${pet.img}" alt="${pet.name}'s photo" class="pets-cards-image">
+                <img src="./assets/images/${pet.name}.png" alt="${pet.name}'s photo" class="pets-cards-image">
                 <h4 class="pets-cards-name">${pet.name}</h4>
                 <button class="pets-cards-button">Learn more</button>
             `;
