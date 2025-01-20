@@ -193,7 +193,7 @@ function renderSlider(cards) {
   cards.forEach(pet => {
     const cardHTML = `
       <div class="pets-cards-personal pets-cards-${pet.name}" data-id="${pet.name}">
-        <img src="${pet.img}" alt="${pet.name}'s photo" class="pets-cards-image">
+        <img src="../assets/images/${pet.name}.png" alt="${pet.name}'s photo" class="pets-cards-image">
         <p class="pets-cards-name">${pet.name}</p>
         <button class="pets-cards-button">Learn more</button>
       </div>
