@@ -83,7 +83,7 @@ function showPopup(animal) {
 
 
     const popup = document.querySelector('.pets-cards-popup');
-    popup.querySelector('.popup-image').src = "./assets/images/${animal.name}.png";
+    popup.querySelector('.popup-image').src = `./assets/images/${animal.name}.png`;
     popup.querySelector('.popup-name').textContent = animal.name;
     popup.querySelector('.popup-breed').innerHTML = kindabreed;
     popup.querySelector('.popup-description').innerHTML = animal.description;
@@ -107,10 +107,6 @@ document.querySelector('.cross').addEventListener('click', function() {
     overlay.classList.remove('overlay-active');
     document.body.style.overflow = '';
 });
-
-
-
-
 
 
 
